@@ -27,7 +27,9 @@ bot = Client(
 #start mesajı
 
 ## Əmrlər --------------------------------
-@bot.on_message(filters.command(['start']))
+@bot.on_message(
+    filters.command(["song"])
+)
 def start(client, message):
     MusicAzBot = f'[👋](https://telegra.ph/file/cbfc9ed3f10a194193bcd.jpg) Salam @{message.from_user.username}\n\nMən Bir musiqi botuyam və məndən istifade asandir\n Bir problem olduqda Sahiblə əlaqəyə keçin .\nMusiqi  yükləmək üçün:\n1) /song (musiqi adı)\n2) /song (youtube linki)\n3 /video video adı\n4 /video (youtube linki) Xəta əmələ gələrsə sahiblə əlaqə yaradın'
     message.reply_text(
