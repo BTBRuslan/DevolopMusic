@@ -125,8 +125,9 @@ def song(_, message):
     except Exception as e:
         print(e)
 
-
-@bot.on_message(filters.command("video") & ~filters.edited)
+@bot.on_message(
+    filters.command(["video"])
+)
 async def vsong(client, message):
     ydl_opts = {
         "format": "best",
